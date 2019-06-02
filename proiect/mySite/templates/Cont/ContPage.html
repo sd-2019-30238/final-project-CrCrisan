@@ -1,0 +1,14 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+    <h1>Lista Conturi</h1>
+    <div class = "Conturi">
+            {% for cont in lista %}
+                <div class = "Cont">
+                    <p>Nume : {{cont.nume}}</p>
+                    <p>Sold : {{cont.sold}}</p>
+                    <p>Tip : {{cont.tipCont}}</p>
+                </div>
+            {% endfor %}
+    </div>
+{% endblock %}

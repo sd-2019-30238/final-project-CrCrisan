@@ -1,0 +1,12 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+    <div class="add-tranzactie">
+        <h2>Add Tranzactie</h2>
+        <form class="site-form" action="{%url 'Tranzactie:add-tranzactie'%}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Add">
+        </form>
+    </div>
+{% endblock %}

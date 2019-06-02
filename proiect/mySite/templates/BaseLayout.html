@@ -1,0 +1,40 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Online Bank</title>
+    <link rel = "stylesheet" href="{% static 'Styles.css'%}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        <form class="conturi-link" action="{% url 'Cont:Home' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Informatii conturi</button>
+        </form>
+        <form class="tranzactii-link" action="{% url 'Tranzactie:list-tranzactii' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Istoric tranzactii</button>
+        </form>
+        <form class="op-link" action="{% url 'Cont:ListOp' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Operatii</button>
+        </form>
+    {%else%}
+        <form class="login-link" action="{% url 'accounts:login' %}">
+            <button type="submit">Login</button>
+        </form>
+        <form class="login-link" action="{% url 'accounts:signup' %}">
+            <button type="submit">Sigup</button>
+        </form>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

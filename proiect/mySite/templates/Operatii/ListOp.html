@@ -1,0 +1,10 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+<div>
+    <h1>Lista operatii bancare</h1>
+    <h2><a href = "{% url 'Cont:Tr1' %}">Transfera bani catre contul personal</a></h2>
+    <h2><a href = "{% url 'Cont:PlataFactura' %}">Plateste factura</a></h2>
+    <h2><a href = "{% url 'Cont:Tr2' %}">Transfera bani</a></h2>
+</div>
+{% endblock %}

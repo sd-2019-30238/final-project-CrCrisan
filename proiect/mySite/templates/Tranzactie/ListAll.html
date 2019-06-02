@@ -1,0 +1,17 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+    <h1>Lista Tranzactii</h1>
+
+    <div class = "TranzactiiList">
+            {% for tranzactie in lista %}
+                <div class = "Cont">
+                    <p>Data : {{tranzactie.data}}</p>
+                    <p>Cont : {{tranzactie.cont}}</p>
+                    <p>Categorie : {{tranzactie.categorie}}</p>
+                    <p>Total : {{tranzactie.total}}</p>
+                    <p>Informatii : {{tranzactie.informatii}}</p>
+                </div>
+            {% endfor %}
+    </div>
+{% endblock %}
