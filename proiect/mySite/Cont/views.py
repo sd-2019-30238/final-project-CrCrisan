@@ -95,6 +95,17 @@ def plataFactura(request):
     if request.method == 'POST':
         form = PlataFactura(request.user, request.POST, request.FILES)
         if form.is_valid():
+            cont1 = form.cleaned_data['cont1']
+            suma = form.cleaned_data['suma']
+
+            tranzactie = Tranzactie()
+            tranzactie.cont = cont1
+            tranzactie.categorie = 'Tra'
+            tranzactie.total = -suma
+            tranzactie.save()
+            cont1.sold -= suma
+            cont1.save()
+
             return redirect('HomePage')
         return render(request, 'Operatii\PlataFactura.html', {'form':form})
     form = PlataFactura(request.user)

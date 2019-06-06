@@ -1,0 +1,12 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+<div class="add-transfer2">
+        <h2>Add Imprumut</h2>
+        <form class="site-form" action="{%url 'Imprumut:AddImprumut' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Add">
+        </form>
+    </div>
+{% endblock %}

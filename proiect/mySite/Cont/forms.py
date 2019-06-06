@@ -69,7 +69,7 @@ class PlataFacturaF(models.Model):
 class PlataFactura(forms.ModelForm):
     class Meta:
         model = PlataFacturaF
-        fields = ['cont1', 'furnizor', 'suma', 'data', 'nrFactura']
+        fields = ['cont1', 'furnizor', 'suma',  'nrFactura']
     
     def __init__(self, user, *args, **kwargs):
         super(PlataFactura, self).__init__(*args, **kwargs)

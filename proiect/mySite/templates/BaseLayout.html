@@ -25,6 +25,10 @@
                 {% csrf_token %}
                 <button type="submit">Operatii</button>
         </form>
+        <form class="op-link" action="{% url 'Imprumut:AprobareImprumut' %}" >
+            {% csrf_token %}
+            <button type="submit">Imprumuturi</button>
+    </form>
     {%else%}
         <form class="login-link" action="{% url 'accounts:login' %}">
             <button type="submit">Login</button>

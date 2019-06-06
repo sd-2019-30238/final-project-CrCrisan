@@ -1,0 +1,19 @@
+{% extends 'BaseLayout.html'%}
+
+{% block content %}
+<div class="imprumut-all">
+    <h1>Lista Conturi</h1>
+        <div class = "imprumut">
+                {% for imprumut in lista %}
+                    <div class = "Cont">
+                        <p>Cont : {{imprumut.cont}}</p>
+                        <p>Total : {{imprumut.total}}</p>
+                        <p>Moneda : {{imprumut.moneda}}</p>
+                        <p>Status : {{imprumut.status}}</p>
+                        <p>Informatii : {{imprumut.informatii}}</p>
+                        <h2><a href = "{% url 'Imprumut:EditLoan' imprumutId=imprumut.id %}">Editeaza</a></h2>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}

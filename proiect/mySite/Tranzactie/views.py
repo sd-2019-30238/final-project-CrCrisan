@@ -19,5 +19,13 @@ def addTranzactie(request):
 
 @login_required()
 def listTranzactii(request):
-    lista = Tranzactie.objects.all()
+    lista = Tranzactie.objects.all().order_by('-data')
     return render(request, 'Tranzactie/ListAll.html', {'lista' : lista})
+
+def isEmployee(user):
+    return user.groups.filter(name = 'Employees').exists()
+
+@login_required()
+@user_passes_test(isEmployee)
+def aprobareCredite(request):
+    return redirect('HomePage')

@@ -1,0 +1,17 @@
+{% extends 'BaseLayout.html'%}
+
+ {% block content %}
+    <div class = "Loan">
+        <h2>Cont :{{imprumut.cont}}</h2>
+        <p>Total : {{imprumut.total}}</p>
+        <p>Moneda : {{imprumut.moneda}}</p>
+        <p>Informatii: {{imprumut.informatii}}</p>
+        {% if loanStatus == 'p' %}
+            <form class="aprove-book" action="{% url 'Imprumut:EditLoan' imprumutId=imprumut.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Aprove Loan</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %} 
+

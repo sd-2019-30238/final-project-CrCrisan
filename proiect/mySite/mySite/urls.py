@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('Accounts.urls')),
     path('cont/', include('Cont.urls'), name = "Cont"),
     path('tranzactie/', include('Tranzactie.urls'), name = "Tranzactie"),
+    path('imprumut/', include('Imprumut.urls'), name = "Imprumut"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
